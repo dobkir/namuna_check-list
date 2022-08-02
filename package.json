@@ -1,0 +1,23 @@
+{
+  "name": "checklist",
+  "version": "1.0.0",
+  "description": "Namunas order checklist",
+  "author": "Pavel Kirillov <dobkir@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://dobkir.github.io/namuna_check-list/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dobkir/namuna_check-list"
+  },
+  "main": "index.html",
+  "window": {
+    "width": 800,
+    "height": 800,
+    "position": "center",
+    "min_width": 800,
+    "min_height": 200
+  },
+  "webkit": {
+    "plugin": true
+  }
+}
