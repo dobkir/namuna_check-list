@@ -1,0 +1,272 @@
+@import "./_fonts.css";
+@import "./_normalize.css";
+
+
+html {
+  box-sizing: border-box;
+  font-size: 0.625em;
+
+  background-color: #E9E8DC;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 1.6rem;
+  line-height: 2rem;
+  color: #E9E8DC;
+
+  background-color: #0D4B55;
+}
+
+.container {
+  max-width: 80rem;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.container-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.logo-paragraph {
+  display: inline-block;
+  width: 100%;
+  height: 5rem;
+
+  text-align: left;
+  line-height: 50px;
+}
+
+.logo {
+  display: inline-block;
+  width: 22.8rem;
+  height: 4rem;
+
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  background-color: #E9E8DC;
+  background-position: center;
+  -webkit-mask-image: url("../svg/018_Белый RU.svg");
+  mask-image: url("../svg/018_Белый RU.svg");
+  -webkit-mask-size: cover;
+  mask-size: cover;
+}
+
+.title-paragraph {
+  position: relative;
+
+  width: 100%;
+
+  text-align: center;
+}
+
+.title-paragraph::before,
+.title-paragraph::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+
+  background-color: #E9E8DC;
+}
+
+.title-paragraph::before {
+  left: 0;
+  top: 0;
+}
+
+.title-paragraph::after {
+  left: 0;
+  bottom: 0;
+}
+
+.main-title {
+  font: normal 700 2.4rem/2.8rem "Roboto-Bold";
+  letter-spacing: 0.6px;
+}
+
+.section-title {
+  margin-bottom: 3rem;
+
+  font: normal 700 2rem/2.6rem "Roboto-Bold";
+}
+
+.main {
+  font: normal 500 1.8rem/2rem "Roboto-Regular";
+}
+
+.container-main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  height: 100%;
+  margin: 1.6rem auto;
+}
+
+.section {
+  padding: 0 2rem;
+}
+
+/*==================== Checkboxes ====================*/
+label input[type=checkbox] {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+  display: block;
+  width: 0;
+  height: 0;
+}
+
+.checkbox-label {
+  position: relative;
+
+  display: block;
+  margin: 0 0 2rem 2rem;
+
+  cursor: pointer;
+  user-select: none;
+}
+
+.checkbox-label input[type=checkbox] {
+  position: absolute;
+  z-index: -1;
+
+  display: block;
+  width: 0;
+  height: 0;
+
+  opacity: 0;
+}
+
+.checkbox-text {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  padding: 0 0 0 3.5rem;
+
+  line-height: 2.4rem;
+  letter-spacing: 0.3px;
+}
+
+.checkbox-text:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  display: inline-block;
+  width: 2rem;
+  height: 2rem;
+
+  background-color: #777;
+  border: 1px solid #E9E8DC;
+  box-shadow: inset 0 0 1px #ccc;
+
+  opacity: 0.2;
+}
+
+/* Checked */
+.checkbox-label input[type=checkbox]+span:after {
+  content: "";
+
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.checkbox-label input[type=checkbox]:checked+span:after {
+  content: "✓";
+  position: absolute;
+  left: 2px;
+  padding-bottom: 0.8rem;
+
+  font-weight: 900;
+  font-size: 3.5rem;
+  color: #18f710;
+
+  opacity: 1;
+}
+
+.checkbox-label input[type=checkbox]:checked+.checkbox-text::before {
+  background-color: transparent;
+  border: 1px solid #18f710;
+  box-shadow: inset 0 0 1px #E9E8DC;
+
+  opacity: 1;
+}
+
+.checkbox-label input[type=checkbox]:checked+.checkbox-text {
+  color: #18f710;
+}
+
+/* Focus */
+.focused .checkbox-text:before {
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, .25);
+}
+
+/* Hover */
+.checkbox-text:hover:after {
+  filter: brightness(110%);
+}
+
+/* Active */
+.checkbox-text:active:before,
+.checkbox-text:active:after {
+  filter: brightness(80%);
+}
+
+/* Disabled */
+.checkbox-label input[type=checkbox]:disabled+span {
+  color: #666;
+
+  cursor: default;
+}
+
+.checkbox-label input[type=checkbox]:disabled+span:before,
+.checkbox-label input[type=checkbox]:disabled+span:after {
+  filter: grayscale(100%);
+  opacity: 0.6;
+}
+
+/*================= End of Checkboxes =================*/
+
+
+.container-footer {
+  margin: 0 auto;
+  padding-bottom: 2rem;
+}
+
+@-webkit-keyframes pulsate {
+  50% {
+    color: #fff;
+    text-shadow: 0 -1px rgba(0, 0, 0, .3), 0 0 4px #ffd, 0 0 6px #fff;
+  }
+}
+
+@keyframes pulsate {
+  50% {
+    color: #fff;
+    text-shadow: 0 -1px rgba(0, 0, 0, .3), 0 0 4px #ffd, 0 0 6px #fff;
+  }
+}
+
+.final-message {
+  font: normal 500 1.6rem/2rem "Roboto-Regular";
+  letter-spacing: 0.3px;
+  text-align: center;
+  text-shadow: 0 -1px rgba(0, 0, 0, .1);
+
+  -webkit-animation: pulsate 3s linear infinite;
+  animation: pulsate 3s linear infinite;
+}
